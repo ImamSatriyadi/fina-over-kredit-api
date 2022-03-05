@@ -1,0 +1,55 @@
+unit compliance berada langsung dibawah direksi yaitu di bawah direktur kepatuhan.
+
+
+
+fungsi kepatuhan :
+
+monitoring peraturan
+- update peraturan baru ojk, jika ada penerbitan   peraturan baru maka dilakukan analisa
+
+monitoring kepatuhan
+- reminder (By email) setiap 1 bulan sekali di   unit kerja
+  - laporan yang sifatnya rutin maka akan             dimasukan ke dalam matriks kepatuhan
+  - laporan yang sifatnya 1 kali pemenuhan maka       akan dimasukan ke kertas kerja
+-laporan ke entitas utama (BCA) dilakukan setiap 6 bulan sekali 
+
+Program APU PPT
+-setiap perusahaan wajib menerapkan APU PPT
+
+-EDB dilakukan ketika menemukan kustomer beresiko
+ tinggi
+
+
+ppatk
+-tkm => transaksi keuangan mencurigakan 
+  -Untuk analisa dan pelaporan digunakan 6    parameter
+     -Pelunasan dipercepat (ET), 
+     -Deposit, 
+     -Menyimpang Profil, 
+     -Menyimpang Karakteristik DP = 70%, 
+     -Menyimpang Karakteristik Angsuran =  60%       Penghasilan, 
+     -High Risk Customer
+       Perorangan
+        -Politisi
+        -Pegawai BUMN
+       usaha
+        -jual beli emas
+        -money changer
+        -travel
+
+-Pemenuhan data atas permintaan ppatk
+  - memenuhi seiapa permintaan data untuk pemeriksaan lebih lanjut oleh ppatk
+  - berkoordinasi dengan unit lain
+  - pelaporan lewat goAml (tidak semua)
+
+-pemberian opin compliance
+  
+
+
+
+
+
+
+
+
+
