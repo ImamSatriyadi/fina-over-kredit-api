@@ -36,6 +36,10 @@ public class NewCustomerService {
         newCustomerRepository.rollBack();
     }
 
+    public void commit(String no_kontrak) {
+        newCustomerRepository.commit(no_kontrak);
+    }
+
     public Optional<TempNewCustomer> findByNoKontrak(String no_kontrak) {
 
         return newCustomerRepository.findByNoKontrak(no_kontrak);

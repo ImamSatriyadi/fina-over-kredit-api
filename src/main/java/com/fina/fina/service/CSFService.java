@@ -72,4 +72,8 @@ public class CSFService {
 
         return rate;
     }
+
+    public void updateStatusPengajuan(String no_kontrak) {
+        csfRepository.updateStatusPengajuan(no_kontrak);
+    }
 }

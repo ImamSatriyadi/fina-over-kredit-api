@@ -20,6 +20,9 @@ public class TempDocumentNewCustomer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @Column(name = "name")
+    private String name;
+
     @Column(name = "path_doc")
     private String path_doc;
 
@@ -31,9 +34,18 @@ public class TempDocumentNewCustomer {
 
     }
 
-    public TempDocumentNewCustomer(String path_doc, int id_customer) {
+    public TempDocumentNewCustomer(String name, String path_doc, int id_customer) {
+        this.name = name;
         this.path_doc = path_doc;
         this.id_customer = new TempNewCustomer(id_customer);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getId() {

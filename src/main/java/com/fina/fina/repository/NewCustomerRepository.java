@@ -23,6 +23,11 @@ public interface NewCustomerRepository extends JpaRepository<TempNewCustomer, In
 
     @Transactional
     @Modifying
+    @Query(value = "UPDATE public_temp_new_customer SET status_apply='commit' where old_customer=?1", nativeQuery = true)
+    public void commit(String no_kontrak);
+
+    @Transactional
+    @Modifying
     @Query(value = "DELETE FROM public_temp_new_customer where status_apply='not-commit'", nativeQuery = true)
     public void rollBack();
 

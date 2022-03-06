@@ -71,6 +71,9 @@ public class CSF {
     @Column(name = "tgl_jatuh_tempo")
     private Date tgl_jatuh_tempo;
 
+    @Column(name = "pengajuan_overkredit")
+    private String pengajuan_overkredit;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "email_user", nullable = false)
     private UserFina email_user;
@@ -80,6 +83,14 @@ public class CSF {
 
     public CSF() {
 
+    }
+
+    public String getPengajuan_overkredit() {
+        return pengajuan_overkredit;
+    }
+
+    public void setPengajuan_overkredit(String pengajuan_overkredit) {
+        this.pengajuan_overkredit = pengajuan_overkredit;
     }
 
     public CSF(String no_kontrak) {

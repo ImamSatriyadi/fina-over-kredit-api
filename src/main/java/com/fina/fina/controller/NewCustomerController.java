@@ -11,6 +11,7 @@ import com.fina.fina.DTO.response.ResponseMessage;
 import com.fina.fina.model.FileInfo;
 import com.fina.fina.model.TempDocumentNewCustomer;
 import com.fina.fina.model.TempNewCustomer;
+import com.fina.fina.service.CSFService;
 import com.fina.fina.service.DocumentNewCustomerService;
 import com.fina.fina.service.FileStorageService;
 import com.fina.fina.service.NewCustomerService;
@@ -42,6 +43,9 @@ public class NewCustomerController {
     NewCustomerService newCustomerService;
 
     @Autowired
+    CSFService csfService;
+
+    @Autowired
     FileStorageService storageService;
 
     @Autowired
@@ -58,7 +62,7 @@ public class NewCustomerController {
     }
 
     @PostMapping("/upload")
-    public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile[] file,
+    public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile[] file, @RequestParam String nameDoc,
             @RequestParam String no_kontrak) {
         String message = "";
 
@@ -69,11 +73,14 @@ public class NewCustomerController {
                 storageService.save(files);
                 fileNames.add(files.getOriginalFilename());
                 TempDocumentNewCustomer tempDocumentNewCustomer = new TempDocumentNewCustomer(
-                        "http://localhost:8081/fina_overkredit/api/newcustomer/files/" + files.getOriginalFilename(),
+                        nameDoc,
+                        "https://fina-overkredit-api.herokuapp.com/fina_overkredit/api/newcustomer/files/"
+                                + files.getOriginalFilename(),
                         tempNewCustomer.get().getId());
 
                 documentNewCustomerService.saveDocument(tempDocumentNewCustomer);
-
+                newCustomerService.commit(no_kontrak);
+                csfService.updateStatusPengajuan(no_kontrak);
             });
             // storageService.save(file);
             // message = "Uploaded the file successfully: " + file.getOriginalFilename();
