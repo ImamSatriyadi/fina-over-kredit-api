@@ -1,5 +1,6 @@
 package com.fina.fina.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.fina.fina.DTO.request.NewCustomerDTO;
@@ -43,5 +44,18 @@ public class NewCustomerService {
     public Optional<TempNewCustomer> findByNoKontrak(String no_kontrak) {
 
         return newCustomerRepository.findByNoKontrak(no_kontrak);
+    }
+
+    public Optional<String> findNoKontrak(int id) {
+
+        return newCustomerRepository.finNoKontrak(id);
+    }
+
+    public List<TempNewCustomer> showData() {
+        return newCustomerRepository.findAll();
+    }
+
+    public Optional<TempNewCustomer> showById(int id) {
+        return newCustomerRepository.findById(id);
     }
 }

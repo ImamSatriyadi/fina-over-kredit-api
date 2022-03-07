@@ -61,6 +61,26 @@ public class NewCustomerController {
         newCustomerService.rollBack();
     }
 
+    @GetMapping("/showData")
+    public ResponseEntity<?> showData() {
+        return ResponseEntity.ok(newCustomerService.showData());
+    }
+
+    @GetMapping("/showDataById")
+    public ResponseEntity<?> showDataById(@RequestParam int id_new_customer) {
+        return ResponseEntity.ok(newCustomerService.showById(id_new_customer));
+    }
+
+    @GetMapping("/showDataDocument")
+    public ResponseEntity<?> showDataDocument(@RequestParam int id_new_customer) {
+        return ResponseEntity.ok(documentNewCustomerService.getDataById(id_new_customer));
+    }
+
+    @GetMapping("/getNoKontrak")
+    public ResponseEntity<?> showNoKontrak(@RequestParam int id_new_customer) {
+        return ResponseEntity.ok(newCustomerService.findNoKontrak(id_new_customer));
+    }
+
     @PostMapping("/upload")
     public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile[] file, @RequestParam String nameDoc,
             @RequestParam String no_kontrak) {

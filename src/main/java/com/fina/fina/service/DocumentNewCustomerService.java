@@ -1,5 +1,7 @@
 package com.fina.fina.service;
 
+import java.util.List;
+
 import com.fina.fina.model.TempDocumentNewCustomer;
 import com.fina.fina.repository.DocumentNewCustomerRepository;
 
@@ -11,8 +13,12 @@ public class DocumentNewCustomerService {
     @Autowired
     DocumentNewCustomerRepository documentNewCustomerRepository;
 
-    public void saveDocument(TempDocumentNewCustomer tempDocumentNewCustomer){
+    public void saveDocument(TempDocumentNewCustomer tempDocumentNewCustomer) {
         documentNewCustomerRepository.save(tempDocumentNewCustomer);
     }
-    
+
+    public List<TempDocumentNewCustomer> getDataById(int id_new_customer) {
+        return documentNewCustomerRepository.findByNoKontrak(id_new_customer);
+    }
+
 }

@@ -33,4 +33,10 @@ public class CSFController {
     public ResponseEntity<PerhitunganDTO> getPerhitungan(@RequestParam String no_kontrak) {
         return ResponseEntity.ok(csfService.getperhitungan(no_kontrak));
     }
+
+    @GetMapping("/showDataById")
+    public ResponseEntity<?> getDataByid(@RequestParam String no_kontrak) {
+        return ResponseEntity.ok(csfService.findById(no_kontrak));
+    }
+
 }
