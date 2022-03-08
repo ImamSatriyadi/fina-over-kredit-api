@@ -51,6 +51,11 @@ public class NewCustomerService {
         return newCustomerRepository.finNoKontrak(id);
     }
 
+    public Optional<Integer> findIdNoKontrak(String no_kontrak) {
+
+        return newCustomerRepository.finIdKontrak(no_kontrak);
+    }
+
     public List<TempNewCustomer> showData() {
         return newCustomerRepository.findAll();
     }

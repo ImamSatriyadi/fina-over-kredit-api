@@ -39,4 +39,9 @@ public class CSFController {
         return ResponseEntity.ok(csfService.findById(no_kontrak));
     }
 
+    @GetMapping("/updateStatusPengajuan")
+    public void updateStatusPengajuan(@RequestParam String status, @RequestParam String no_kontrak) {
+        csfService.updateStatusPengajuan(status, no_kontrak);
+    }
+
 }

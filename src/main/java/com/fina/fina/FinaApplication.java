@@ -20,8 +20,8 @@ public class FinaApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		storageService.deleteAll();
-		storageService.init();
+		// storageService.deleteAll();
+		// storageService.init();
 
 	}
 

@@ -17,6 +17,6 @@ public interface CSFRepository extends JpaRepository<CSF, String> {
 
     @Transactional
     @Modifying
-    @Query(value = "UPDATE public_csf SET pengajuan_overkredit='apply' where no_kontrak=?1", nativeQuery = true)
-    public void updateStatusPengajuan(String no_kontrak);
+    @Query(value = "UPDATE public_csf SET pengajuan_overkredit=?1 where no_kontrak=?2", nativeQuery = true)
+    public void updateStatusPengajuan(String status, String no_kontrak);
 }

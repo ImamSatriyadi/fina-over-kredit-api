@@ -73,8 +73,8 @@ public class CSFService {
         return rate;
     }
 
-    public void updateStatusPengajuan(String no_kontrak) {
-        csfRepository.updateStatusPengajuan(no_kontrak);
+    public void updateStatusPengajuan(String status, String no_kontrak) {
+        csfRepository.updateStatusPengajuan(status, no_kontrak);
     }
 
     public Optional<CSF> findById(String no_kontrak) {

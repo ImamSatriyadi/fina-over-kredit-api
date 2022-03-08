@@ -71,6 +71,11 @@ public class NewCustomerController {
         return ResponseEntity.ok(newCustomerService.showById(id_new_customer));
     }
 
+    @GetMapping("/showIdNewCustomer")
+    public ResponseEntity<?> showIdNewCustomer(@RequestParam String no_kontrak) {
+        return ResponseEntity.ok(newCustomerService.findIdNoKontrak(no_kontrak));
+    }
+
     @GetMapping("/showDataDocument")
     public ResponseEntity<?> showDataDocument(@RequestParam int id_new_customer) {
         return ResponseEntity.ok(documentNewCustomerService.getDataById(id_new_customer));
@@ -100,7 +105,7 @@ public class NewCustomerController {
 
                 documentNewCustomerService.saveDocument(tempDocumentNewCustomer);
                 newCustomerService.commit(no_kontrak);
-                csfService.updateStatusPengajuan(no_kontrak);
+                csfService.updateStatusPengajuan("DALAM PROSES PENGAJUAN", no_kontrak);
             });
             // storageService.save(file);
             // message = "Uploaded the file successfully: " + file.getOriginalFilename();

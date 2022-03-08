@@ -19,6 +19,9 @@ public interface NewCustomerRepository extends JpaRepository<TempNewCustomer, In
     @Query(value = "Select old_customer FROM public_temp_new_customer where id=?1", nativeQuery = true)
     Optional<String> finNoKontrak(int id);
 
+    @Query(value = "Select id FROM public_temp_new_customer where old_customer=?1", nativeQuery = true)
+    Optional<Integer> finIdKontrak(String no_kontrak);
+
     @Transactional
     @Modifying
     @Query(value = "UPDATE public_temp_new_customer set old_customer=?1  where nik=?2", nativeQuery = true)
